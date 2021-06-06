@@ -12,7 +12,7 @@ function Dragcontents() {
 								<div class="col-lg-4 col-md-4 col-4">
 									<div class="div003">
 										<a >
-											 <img src="assets/img/logo.png" class="img001"/> 
+											  
 											<h4 class="h001">Pschool</h4>
 										</a>
 									</div>

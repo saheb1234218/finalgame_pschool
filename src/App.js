@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {DragDropContext,Droppable,Draggable} from 'react-beautiful-dnd';
 import {Set_right,gameover} from './redux/actions';
-
+import './home.css';
 const data1=[
   {
     image:"https://pschool.in/image2/animals/lion.jpg",
@@ -81,7 +81,11 @@ function App() {
       const score=useSelector(state=>state.reducer.cond);    
       const gameovered=useSelector(state=>state.reducer.over);
       const [sviewscore,setsviewscore]=useState(false);
-
+      const [mobilenav,setmobilenav]=useState(false);
+      const openmobilenav=()=>{
+        console.log("hit")
+        setmobilenav(true);
+      }
 
 const onDragend=result=>{
   setcount(count+1);
@@ -206,8 +210,7 @@ const setplay=()=>{
 			<!-- /navber -->
 
 			<!-- mobile header --> */}
-
-				<section>
+<section>
 					<div class="mobile_header_div_1">
 						
 						<div class="container">
@@ -215,12 +218,12 @@ const setplay=()=>{
 								<div class="row">
 									<div class="col-sm-6 col-xs-6 col-6">
 										<div class="mobile_header_div_3">
-											<div id="nkSidenav" class="sidenav">
+											<div id="nkSidenav" class={mobilenav?"opensidenav":"sidenav"}>
 											    <div class="nkdiv001">
-											      	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+											      	<a  class="closebtn" onClick={()=>setmobilenav(false)}>&times;</a>
 											      	<div class="nkdiv002">
 											      	  	<a href="index.html">
-															 <img src="assets/img/logo.png" class="img001"/> 
+															
 															<h4 class="h001">Pschool</h4>
 														</a>
 											      	</div>
@@ -228,18 +231,21 @@ const setplay=()=>{
 											    <div class="div058">
 											    	<a href="#" class="a005">Showcase</a>
 													<a href="#" class="a005">All playlist</a>
-													<a href="#" class="a005">Dashboard</a>
+                          <Link to="/">
+                          <a href="#" class="a005">Dashboard</a>
+                          </Link>
+												
 													<a href="#" class="a005">FAQ</a>
 													<a href="#" class="a005">Login</a>
 													<a href="about.html" class="a005">About Us</a>
 											    </div>
 											</div>
-											<span onclick="openNav()" style={{fontSize:'30px',position:' absolute' ,top: '17px' ,cursor:'pointer',color: '#01448e' }}> &#9776;</span>
+											<span onClick={openmobilenav} style={{fontSize:'30px',position:' absolute' ,top: '17px' ,cursor:'pointer',color: '#01448e' }}> &#9776;</span>
 										</div>
 									</div>
 									<div class="col-sm-6 col-xs-6 col-6">
 										<div class="mobile_header_div_4">
-											<img src="assets/img/logo.png" class="img010"/> 
+										
 											<h4 class="h001" style={{width: '100%'}}>Pschool</h4>
 										</div>
 									</div>
@@ -248,7 +254,6 @@ const setplay=()=>{
 						</div>
 					</div>
 				</section>
-
 			{/* <!-- /mobile header --> */}
 
 		</header>

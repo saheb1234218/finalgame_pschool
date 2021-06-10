@@ -1,7 +1,12 @@
-import React from 'react'
+import {React,useState} from 'react'
 import './home.css';
 import {Link} from 'react-router-dom';
 function Dragcontents() {
+	const [mobilenav,setmobilenav]=useState(false);
+	const openmobilenav=()=>{
+		console.log("hit")
+		setmobilenav(true);
+	}
     return (
 <>
 <header>
@@ -12,7 +17,7 @@ function Dragcontents() {
 								<div class="col-lg-4 col-md-4 col-4">
 									<div class="div003">
 										<a >
-											  
+											 
 											<h4 class="h001">Pschool</h4>
 										</a>
 									</div>
@@ -56,7 +61,6 @@ function Dragcontents() {
 				</div>
 {/* 
 			<!-- /navber -->
-
 			<!-- mobile header --> */}
 
 				<section>
@@ -67,12 +71,12 @@ function Dragcontents() {
 								<div class="row">
 									<div class="col-sm-6 col-xs-6 col-6">
 										<div class="mobile_header_div_3">
-											<div id="nkSidenav" class="sidenav">
+											<div id="nkSidenav" class={mobilenav?"opensidenav":"sidenav"}>
 											    <div class="nkdiv001">
-											      	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+											      	<a  class="closebtn" onClick={()=>setmobilenav(false)}>&times;</a>
 											      	<div class="nkdiv002">
 											      	  	<a href="index.html">
-															 <img src="assets/img/logo.png" class="img001"/> 
+															
 															<h4 class="h001">Pschool</h4>
 														</a>
 											      	</div>
@@ -80,18 +84,21 @@ function Dragcontents() {
 											    <div class="div058">
 											    	<a href="#" class="a005">Showcase</a>
 													<a href="#" class="a005">All playlist</a>
-													<a href="#" class="a005">Dashboard</a>
+													<Link to="/">
+                          <a href="#" class="a005">Dashboard</a>
+                          </Link>
+												
 													<a href="#" class="a005">FAQ</a>
 													<a href="#" class="a005">Login</a>
 													<a href="about.html" class="a005">About Us</a>
 											    </div>
 											</div>
-											<span onclick="openNav()" style={{fontSize:'30px',position:' absolute' ,top: '17px' ,cursor:'pointer',color: '#01448e' }}> &#9776;</span>
+											<span onClick={openmobilenav} style={{fontSize:'30px',position:' absolute' ,top: '17px' ,cursor:'pointer',color: '#01448e' }}> &#9776;</span>
 										</div>
 									</div>
 									<div class="col-sm-6 col-xs-6 col-6">
 										<div class="mobile_header_div_4">
-											<img src="assets/img/logo.png" class="img010"/> 
+										
 											<h4 class="h001" style={{width: '100%'}}>Pschool</h4>
 										</div>
 									</div>
@@ -112,7 +119,7 @@ function Dragcontents() {
 								<div class="div015">
 									<p class="p003">Drag And Drop</p>
 									<div class="row">
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-2">
+										<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
 											<div class="div021">
 												<Link to="/drag" class="product001">
 													<div class="div020">
@@ -124,7 +131,7 @@ function Dragcontents() {
 												</Link>
 											</div>
 										</div>
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-2">
+										<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
 											<div class="div021">
 												<a href="#" class="product001">
 													<div class="div020">
@@ -134,7 +141,7 @@ function Dragcontents() {
 												</a>
 											</div>
 										</div>
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-2">
+										<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
 											<div class="div021">
 												<a href="#" class="product001">
 													<div class="div020">
@@ -144,7 +151,7 @@ function Dragcontents() {
 												</a>
 											</div>
 										</div>
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-2">
+										<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
 											<div class="div021">
 												<a href="#" class="product001">
 													<div class="div020">
@@ -154,7 +161,7 @@ function Dragcontents() {
 												</a>
 											</div>
 										</div>
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-2">
+										<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
 											<div class="div021">
 												<a href="#" class="product001">
 													<div class="div020">
@@ -164,7 +171,7 @@ function Dragcontents() {
 												</a>
 											</div>
 										</div>
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-2">
+										<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
 											<div class="div021">
 												<a href="#" class="product001">
 													<div class="div020">
@@ -174,7 +181,7 @@ function Dragcontents() {
 												</a>											
 											</div>
 										</div>
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-2">
+										<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
 											<div class="div021">
 												<a href="#" class="product001">
 													<div class="div020">
@@ -184,7 +191,7 @@ function Dragcontents() {
 												</a>
 											</div>
 										</div>
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-2">
+										<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
 											<div class="div021">
 												<a href="#" class="product001">
 													<div class="div020">
@@ -194,7 +201,7 @@ function Dragcontents() {
 												</a>
 											</div>
 										</div>
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-2">
+										<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
 											<div class="div021">
 												<a href="#" class="product001">
 													<div class="div020">
@@ -204,7 +211,7 @@ function Dragcontents() {
 												</a>
 											</div>
 										</div>
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-2">
+										<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
 											<div class="div021">
 												<a href="#" class="product001">
 													<div class="div020">
@@ -214,7 +221,7 @@ function Dragcontents() {
 												</a>
 											</div>
 										</div>
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-2">
+										<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
 											<div class="div021">
 												<a href="#" class="product001">
 													<div class="div020">
@@ -224,7 +231,7 @@ function Dragcontents() {
 												</a>
 											</div>
 										</div>
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-2">
+										<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
 											<div class="div021">
 												<a href="#" class="product001">
 													<div class="div020">
@@ -234,7 +241,7 @@ function Dragcontents() {
 												</a>
 											</div>
 										</div>
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 col-2">
+										<div class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
 											<div class="div021">
 												<a href="#" class="product001">
 													<div class="div020">
